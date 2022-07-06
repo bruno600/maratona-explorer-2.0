@@ -8,15 +8,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./src/style.css">
   <title>Linktree</title>
 
+  <link rel="stylesheet" href="./src/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body class="dark-pink">
   <div class="container">
-    <img class="avatar" src="https://github.com/bruno600.png" alt="imagem de bruno600" />
+    <img 
+      class="avatar" 
+      src="https://github.com/bruno600.png" 
+      alt="imagem de bruno600" 
+
+      data-tilt data-tilt-max="50"
+      data-tilt-speed="6000" 
+      data-tilt-perspective="300" 
+      data-tilt-scale="2.1"
+      data-tilt-glare data-tilt-max-glare="0.8"
+      />
     <h1>Bruno</h1>
     <p class="username">@bruno600</p>
 
@@ -56,6 +66,8 @@
 
     <footer>Feito por <a href="https://github.com/bruno600" target="_blank">Mim</a> </footer>
   </div>
+
+  <script src="./src/vanilla.min.js"></script>
 </body>
 
 </html>
