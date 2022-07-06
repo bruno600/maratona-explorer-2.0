@@ -111,7 +111,6 @@ ul li a:hover {
   margin-bottom: 25px;
 
   filter: contrast(1.5);
-  filter: drop-shadow(10px 10px 2px rgba(0, 0, 0, 0.63));
   
   cursor: pointer;
 }
