@@ -1,0 +1,120 @@
+:root {
+  /*variaveis*/
+  --bg-color: #D6E2FF;
+  --text-color: #333333;
+  --primary-color: #F93943;
+  --primary-color-dark: #67e6aa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Press Start 2P", sans-serif;
+}
+
+body.dark {
+  --bg-color: rgba(0, 0, 0, 0.9);
+  --text-color: #FFF;
+}
+
+body.pink {
+   --bg-color: pink;
+  --text-color: #FFF;
+  --primary-color: #D6336C;
+  --primary-color-dark: #80304c;
+}
+
+body.dark-pink {
+   --bg-color: rgba(0, 0, 0, 0.9);
+  --text-color: #F7EDF0;
+  --primary-color: #DC758F;
+  --primary-color-dark: #98DFAF;
+}
+
+.container {
+  width: 300px;
+
+  text-align: center;
+  margin: 60px auto;
+}
+
+img {
+  width: 100%;
+}
+
+img.avatar {
+  border: 4px var(--primary-color) solid;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+
+  padding: 3.7px;
+}
+
+h1 {
+  font-size: 32px;
+  
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.username {
+  font-family: "Arial black", monospace;
+  font-size: 18px;
+  font-weight: 400;
+
+  opacity: 0.8;
+}
+
+ul {
+  list-style: none;
+
+  margin: 48px 0;
+}
+
+ul li a {
+  display: flex;
+  height: 53px;
+  border-radius: 6px;
+  
+  margin-bottom: 16px;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary-color);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+
+  transition: background 400ms;
+}
+
+ul li a:hover {
+  background: var(--primary-color-dark);
+}
+
+footer {
+  font-weight: 400;
+  font-size: 12px;
+
+  opacity: 0.6;
+  transition: opacity 400ms;
+}
+
+footer:hover{
+  opacity: 1;
+}
+
+footer a {
+  color: var(--text-color);
+}
