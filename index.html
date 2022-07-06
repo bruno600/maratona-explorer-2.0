@@ -5,13 +5,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <meta property="og:url"                content="https://bruno600.github.io/maratona-explorer-2.0/" />
-  <meta property="og:title"              content="Linktree" />
-  <meta property="og:description"        content="Linktree test." />
-  <meta property="og:image"              content="https://github.com/bruno600.png" />
-  <meta property="og:locale"             content="pt_br" />
-
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
-<body class="dark-pink">
+<body class="light">
   <div class="container">
     <img 
       class="avatar" 
@@ -71,10 +64,53 @@
       </li>
     </ul>
 
+    <div id="lamp-container" class="no-blur-effect">
+      <svg class="lamp" onclick="changeTheme(event)" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-lightbulb-fill"
+        viewBox="0 0 16 16" >
+        <path
+          d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z" />
+      </svg>
+    </div>
+    
     <footer>Feito por <a href="https://github.com/bruno600" target="_blank">Mim</a> </footer>
   </div>
-
+  
   <script src="./src/vanilla.min.js"></script>
+  <script src="./src/theme-icons.js"></script>
+  <script>
+
+    const THEMES = ["light", "dark", "pink", "dark-pink"];
+    var currentTheme = document.body.classList[0]
+
+    var lampContainer = document.querySelector("#lamp-container")
+
+    function changeTheme(event) {
+      var bodyClass = document.body.classList[0]
+      var nextTheme = THEMES.indexOf(currentTheme)+1 == THEMES.length ? 0 : THEMES.indexOf(currentTheme) + 1
+
+      changeIcon(nextTheme)
+
+      document.body.classList.replace(bodyClass, THEMES[nextTheme])
+      currentTheme = document.body.classList[0]
+    }
+
+    function changeIcon(nextTheme) {
+      lampContainer.classList.replace("no-blur-effect", "blur-effect")
+
+      
+      const CI = setInterval(() => {
+        lampContainer.innerHTML = icons[nextTheme]
+        clearInterval(CI)
+      }, 100)
+
+      const BLUR = setInterval(() => {
+        lampContainer.innerHTML = icons[nextTheme]
+        lampContainer.classList.replace("blur-effect", "no-blur-effect")
+        clearInterval(BLUR)
+      }, 400)
+
+    }
+  </script>
 </body>
 
 </html>
